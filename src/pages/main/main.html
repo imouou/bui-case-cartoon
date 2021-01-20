@@ -1,0 +1,125 @@
+<style>
+    .cartoon-page main,
+    .step-item {
+        background-color: #f2c9bc;
+        padding-top: .2rem;
+    }
+    .step-item {
+        width: 100%;
+        height: 100%;
+    }
+    .cartoon-page h1,
+    .cartoon-page p {
+        text-align: center;
+        color: #675553;
+    }
+    .cartoon-wrap .bui-slide {
+        margin-bottom: .2rem;
+    }
+    .cartoon-wrap .bui-slide-img{
+        width: 4rem;
+        height: 3.2rem;
+        background-color: #e2b4a3;
+        border-radius: .2rem;
+    }
+    .cartoon-wrap .active-block .bui-slide-img{
+        background-color: #fff;
+    }
+    .cartoon-wrap .active-block .bui-cross-prev,
+    .cartoon-wrap .active-block .bui-cross-next{
+        visibility: visible;
+    }
+    .cartoon-wrap  .bui-cross-prev,
+    .cartoon-wrap  .bui-cross-next{
+        visibility: hidden;
+    }
+    .cartoon-wrap  .bui-cross-prev .bui-slide-img,
+    .cartoon-wrap  .bui-cross-next .bui-slide-img{
+        background-color: rgba(255,255,255,.3);
+    }
+    .bui-btn-step {
+        width: 1.4rem;
+        height: 1.4rem;
+        line-height: 1.4rem;
+        color: #fff;
+        background-color: #f5433b;
+        border: 3px solid rgba(255,255,255,0.8);
+        padding: 0;
+        margin-bottom: .2rem;
+    }
+    .bui-slide-cross .bui-cross-next .bui-slide-img, 
+    .bui-slide-cross .li-next .bui-slide-img{
+        margin-left: 0;
+    }
+    .bui-slide-cross .bui-cross-prev .bui-slide-img, 
+    .bui-slide-cross .li-prev .bui-slide-img{
+        margin-right: 0;
+    }
+    .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonhead ,
+    .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonbody,
+    .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonfoot {
+        height:3.2rem ;
+    }
+    .cartoonhead {
+        position: relative;
+        z-index: 3;
+    }
+    .cartoonbody {
+        margin-top: -1.1rem;
+        position: relative;
+        z-index: 2;
+    }
+    .cartoonfoot {
+        margin-top: -1.1rem;
+        position: relative;
+        z-index: 1;
+    }
+</style>
+<!-- 这里还是一个标准的BUI页面 -->
+<div class="bui-page cartoon-page">
+    <main>
+        
+        <div id="uiSlide" class="bui-slide">
+            <div class="bui-slide-main">
+                <ul>
+                    <li>
+                        <div class="step-item">
+                        <h1>设置形象, 开启年度报告</h1>
+                        <p>左右切换选择造型</p>
+                        <div class="bui-box bui-box-vertical cartoon-wrap">
+                            <div class="span1" b-class="cartoons.active.0" b-click="cartoons.activeBlock(0)">
+                                <div id="cartoonHead" class="bui-slide"></div>
+                            </div>
+                            <div class="span1" b-class="cartoons.active.1" b-click="cartoons.activeBlock(1)">
+                                <div id="cartoonBody" class="bui-slide"></div>
+                            </div>
+                            <div class="span1" b-class="cartoons.active.2" b-click="cartoons.activeBlock(2)">
+                                <div id="cartoonFoot" class="bui-slide"></div>
+                            </div>
+                            <!-- <div class="span1" b-class="cartoons.active.3" b-click="cartoons.activeBlock(3)">
+                                <div id="cartoonDeco" class="bui-slide"></div>
+                            </div> -->
+                        </div>
+                        <div class="bui-btn-step ring" b-click="cartoons.next">下一步</div>
+                    </div>
+                    </li>
+                    <li style="display:none;">
+                        <div class="step-item">
+                            <!-- 最终形象 -->
+                            <div class="bui-box bui-box-vertical fullheight">
+                              <div class="span1">
+                                    <img b-src="cartoons.profile.head.image" class="cartoonhead" alt="">
+                                    <img b-src="cartoons.profile.body.image" class="cartoonbody" alt="">
+                                    <img b-src="cartoons.profile.foot.image" class="cartoonfoot" alt="">
+                              </div>
+                              <div class="container-y">
+                                <div class="bui-btn-step ring" b-click="cartoons.prev">上一步</div>
+                              </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
