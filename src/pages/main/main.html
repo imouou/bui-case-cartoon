@@ -58,6 +58,8 @@
     .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonhead ,
     .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonbody,
     .bui-slide-fullscreen>.bui-slide-main>ul>li img.cartoonfoot {
+        display: block;
+        width:3.2rem ;
         height:3.2rem ;
     }
     .cartoonhead {
@@ -76,45 +78,54 @@
     }
 </style>
 <!-- 这里还是一个标准的BUI页面 -->
-<div class="bui-page cartoon-page">
+<div class="bui-page bui-box-vertical cartoon-page">
+    <header></header>
     <main>
-        
         <div id="uiSlide" class="bui-slide">
             <div class="bui-slide-main">
                 <ul>
                     <li>
-                        <div class="step-item">
-                        <h1>设置形象, 开启年度报告</h1>
-                        <p>左右切换选择造型</p>
-                        <div class="bui-box bui-box-vertical cartoon-wrap">
-                            <div class="span1" b-class="cartoons.active.0" b-click="cartoons.activeBlock(0)">
-                                <div id="cartoonHead" class="bui-slide"></div>
+                        <!-- 垂直布局 -->
+                        <div class="step-item bui-box-center bui-box-vertical fullheight">
+
+                            <div class="span1">
+                                <h1>设置形象, 开启年度报告</h1>
+                                <p>左右切换选择造型</p>
+                                <div class="bui-box bui-box-vertical cartoon-wrap">
+                                    <div class="span1" b-class="cartoons.active.0" b-click="cartoons.activeBlock(0)">
+                                        <div id="cartoonHead" class="bui-slide"></div>
+                                    </div>
+                                    <div class="span1" b-class="cartoons.active.1" b-click="cartoons.activeBlock(1)">
+                                        <div id="cartoonBody" class="bui-slide"></div>
+                                    </div>
+                                    <div class="span1" b-class="cartoons.active.2" b-click="cartoons.activeBlock(2)">
+                                        <div id="cartoonFoot" class="bui-slide"></div>
+                                    </div>
+                                    <!-- <div class="span1" b-class="cartoons.active.3" b-click="cartoons.activeBlock(3)">
+                                        <div id="cartoonDeco" class="bui-slide"></div>
+                                    </div> -->
+                                </div>
                             </div>
-                            <div class="span1" b-class="cartoons.active.1" b-click="cartoons.activeBlock(1)">
-                                <div id="cartoonBody" class="bui-slide"></div>
+                            <div class="container-y">
+                                <div class="bui-btn-step ring" b-click="cartoons.next">下一步</div>
                             </div>
-                            <div class="span1" b-class="cartoons.active.2" b-click="cartoons.activeBlock(2)">
-                                <div id="cartoonFoot" class="bui-slide"></div>
-                            </div>
-                            <!-- <div class="span1" b-class="cartoons.active.3" b-click="cartoons.activeBlock(3)">
-                                <div id="cartoonDeco" class="bui-slide"></div>
-                            </div> -->
                         </div>
-                        <div class="bui-btn-step ring" b-click="cartoons.next">下一步</div>
-                    </div>
                     </li>
                     <li style="display:none;">
-                        <div class="step-item">
+                        <!-- 垂直布局 -->
+                        <div class="step-item bui-box-center bui-box-vertical fullheight">
                             <!-- 最终形象 -->
-                            <div class="bui-box bui-box-vertical fullheight">
-                              <div class="span1">
-                                    <img b-src="cartoons.profile.head.image" class="cartoonhead" alt="">
-                                    <img b-src="cartoons.profile.body.image" class="cartoonbody" alt="">
-                                    <img b-src="cartoons.profile.foot.image" class="cartoonfoot" alt="">
-                              </div>
-                              <div class="container-y">
+                            <div class="span1">
+                                <div class="bui-box-center">
+                                    <div class="wrap-img">
+                                        <img b-src="cartoons.profile.head.image" class="cartoonhead" alt="">
+                                        <img b-src="cartoons.profile.body.image" class="cartoonbody" alt="">
+                                        <img b-src="cartoons.profile.foot.image" class="cartoonfoot" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-y">
                                 <div class="bui-btn-step ring" b-click="cartoons.prev">上一步</div>
-                              </div>
                             </div>
                         </div>
                     </li>
